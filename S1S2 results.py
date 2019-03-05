@@ -1,3 +1,5 @@
+''' Script to fetch the semester exam results and write them to a csv file. '''
+
 # imports
 import requests
 from bs4 import BeautifulSoup
@@ -45,8 +47,7 @@ regNums = [12150000, 12150076, 12150002, 12150003, 12150004, 12150005,
 # open the file and write the results fetched into it.
 with open('S1S2_results.csv', 'w') as file:
     # header --> subjects
-    file.write('REG NO,NAME,MATHS-I,PHYSICS,CHEMISTRY,MECHANICS,GRAPHICS,BME,BEE,\
-        CP,EVS/TCN,E&M WORKSHOP,CP LAB,LANGUAGE LAB\n')
+    file.write('REG NO,NAME,MATHS-I,PHYSICS,CHEMISTRY,MECHANICS,GRAPHICS,BME,BEE,CP,EVS/TCN,E&M WORKSHOP,CP LAB,LANGUAGE LAB\n')
     for num in regNums:
         print('getting results for RegNum:', num)
         result = getResult(num)
